@@ -8,6 +8,6 @@ https://xiaowangok.github.io/404.html
 https://xiaowangok.github.io/2022/11/17/this-is-test/
 https://xiaowangok.github.io/2022/11/17/hello-world/
 https://xiaowangok.github.io/
-https://xiaowangok.github.io/tags/love/
 https://xiaowangok.github.io/tags/test/
+https://xiaowangok.github.io/tags/love/
 https://xiaowangok.github.io/categories/test/
