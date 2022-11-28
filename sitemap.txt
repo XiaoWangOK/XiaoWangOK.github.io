@@ -10,8 +10,11 @@ https://xiaowangok.github.io/404.html
 https://xiaowangok.github.io/2022/11/17/this-is-test/
 https://xiaowangok.github.io/2022/11/17/hello-world/
 https://xiaowangok.github.io/
+https://xiaowangok.github.io/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/
+https://xiaowangok.github.io/tags/hexo/
+https://xiaowangok.github.io/tags/%E5%8D%9A%E5%AE%A2/
 https://xiaowangok.github.io/tags/love/
 https://xiaowangok.github.io/tags/test/
-https://xiaowangok.github.io/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/
-https://xiaowangok.github.io/categories/test/
 https://xiaowangok.github.io/categories/SpringBoot/
+https://xiaowangok.github.io/categories/%E5%8D%9A%E5%AE%A2/
+https://xiaowangok.github.io/categories/test/

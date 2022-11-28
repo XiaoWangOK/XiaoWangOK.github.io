@@ -13,7 +13,7 @@
   <url>
     <loc>https://xiaowangok.github.io/2022/11/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2022-11-21</lastmod>
+    <lastmod>2022-11-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -110,6 +110,27 @@
 
   
   <url>
+    <loc>https://xiaowangok.github.io/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2022-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaowangok.github.io/tags/hexo/</loc>
+    <lastmod>2022-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaowangok.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2022-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaowangok.github.io/tags/love/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -123,24 +144,24 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://xiaowangok.github.io/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</loc>
-    <lastmod>2022-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://xiaowangok.github.io/categories/test/</loc>
+    <loc>https://xiaowangok.github.io/categories/SpringBoot/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://xiaowangok.github.io/categories/SpringBoot/</loc>
+    <loc>https://xiaowangok.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2022-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaowangok.github.io/categories/test/</loc>
     <lastmod>2022-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
