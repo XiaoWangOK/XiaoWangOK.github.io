@@ -6,7 +6,7 @@
   <link href="https://xiaowangok.github.io/atom.xml" rel="self"/>
   
   <link href="https://xiaowangok.github.io/"/>
-  <updated>2022-11-28T15:15:43.527Z</updated>
+  <updated>2022-12-07T12:17:36.802Z</updated>
   <id>https://xiaowangok.github.io/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>maven加载机制</title>
+    <link href="https://xiaowangok.github.io/2022/12/07/maven%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    <id>https://xiaowangok.github.io/2022/12/07/maven%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</id>
+    <published>2022-12-07T11:48:27.000Z</published>
+    <updated>2022-12-07T12:17:36.802Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用SpringBoot过程中遇到问题 <code>org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.atguigu.ggkt.vod.mapper.xxx </code></p><p>问题排查：</p><ol><li><code>xxxMapper.xml</code> 文件中的sql语句标签涉及的：id是否正确对应 <code>xxxMapper.java</code>接口中的方法名；resultType是否正确对应实体类的全限定名</li><li>maven加载机制：maven默认情况下，在src-main-java目录中只会加载java类型文件，而不会加载其他类型文件</li></ol><p>解决：</p><ol><li><p>直接复制：把xml文件手动copy到<code>target</code>文件夹中</p></li><li><p>把 <code>xxxMapper.xml</code>等文件放到 <code>resource</code> 目录中</p></li><li><p>通过配置方式自动加载</p><ul><li><p>第一步：application.properties</p><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">mybatis-plus.mapper-locations</span><span class="token punctuation">=</span><span class="token attr-value">classpath:com/atguigu/ggkt/vod/mapper/xml/*.xml</span></code></pre></li><li><p>第二步：pom.xml</p><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resource</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>directory</span><span class="token punctuation">></span></span>src/main/java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>directory</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>includes</span><span class="token punctuation">></span></span>              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.yml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.properties<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>includes</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filtering</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filtering</span><span class="token punctuation">></span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resource</span><span class="token punctuation">></span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resource</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>directory</span><span class="token punctuation">></span></span>src/main/resources<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>directory</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>includes</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.yml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.properties<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include</span><span class="token punctuation">></span></span>**/*.xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>includes</span><span class="token punctuation">></span></span>          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filtering</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filtering</span><span class="token punctuation">></span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resource</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span></code></pre></li></ul></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;使用SpringBoot过程中遇到问题 &lt;code&gt;org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.atguigu.ggkt.vod.mapper.xx</summary>
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="https://xiaowangok.github.io/categories/SpringBoot/"/>
+    
+    
+    <category term="Maven" scheme="https://xiaowangok.github.io/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>跨域问题</title>
+    <link href="https://xiaowangok.github.io/2022/11/29/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <id>https://xiaowangok.github.io/2022/11/29/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</id>
+    <published>2022-11-29T03:42:52.000Z</published>
+    <updated>2022-11-29T03:45:49.254Z</updated>
+    
+    
+    
+    
+    
+    <category term="Markdown" scheme="https://xiaowangok.github.io/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot中的统一异常处理</title>
