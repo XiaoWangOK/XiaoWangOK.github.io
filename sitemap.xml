@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xiaowangok.github.io/2022/10/26/hello-world/</loc>
+    <loc>https://xiaowangok.github.io/2022/11/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2023-01-08</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://xiaowangok.github.io/2022/11/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://xiaowangok.github.io/2022/10/26/hello-world/</loc>
     
-    <lastmod>2023-01-07</lastmod>
+    <lastmod>2023-01-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://xiaowangok.github.io/tags/index.html</loc>
+    <loc>https://xiaowangok.github.io/repository/index.html</loc>
     
     <lastmod>2022-11-18</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://xiaowangok.github.io/repository/index.html</loc>
+    <loc>https://xiaowangok.github.io/tags/index.html</loc>
     
     <lastmod>2022-11-18</lastmod>
     
